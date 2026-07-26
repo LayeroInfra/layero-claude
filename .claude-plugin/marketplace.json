@@ -1,0 +1,35 @@
+{
+  "name": "layero-claude",
+  "owner": {
+    "name": "Layero",
+    "url": "https://layero.ru"
+  },
+  "metadata": {
+    "description": "Официальный маркетплейс Layero для Claude Code. Layero — российская платформа хостинга и деплоя фронтенд-приложений: серверы и CDN внутри России, деплой одной командой.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "layero",
+      "source": "./plugins/layero",
+      "description": "Собрать лендинг прямо в чате Claude Code и задеплоить его на Layero — хостинг с серверами и CDN в России.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Layero",
+        "url": "https://layero.ru"
+      },
+      "homepage": "https://docs.layero.ru/plugin/intro",
+      "license": "MIT",
+      "keywords": [
+        "deploy",
+        "deployment",
+        "hosting",
+        "cdn",
+        "landing-page",
+        "static-site",
+        "russia",
+        "mcp"
+      ]
+    }
+  ]
+}
