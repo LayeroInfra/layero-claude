@@ -2,13 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ru.layero/layero",
   "title": "Layero",
-  "description": "Build a landing page in your IDE chat and deploy it — servers and CDN inside Russia.",
-  "version": "1.27.2",
-  "websiteUrl": "https://docs.layero.ru/plugin/intro",
+  "description": "Build, publish and operate frontend sites from IDE chat — build servers and CDN inside Russia.",
+  "websiteUrl": "https://docs.layero.ru/en/plugin/intro/",
   "repository": {
     "url": "https://github.com/LayeroInfra/layero-claude",
     "source": "github"
   },
+  "version": "1.28.1",
   "remotes": [
     {
       "type": "streamable-http",
