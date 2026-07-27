@@ -69,9 +69,13 @@ build_log, ready, error
   organizations migrate between schemes, so a guessed host will be wrong.
   `preview_url` and `edge_ready` are legacy fields; do not gate on them.
 - `error` carries a stable `code` and a `next_action` hint. Follow
-  `next_action`. Common codes: `not_logged_in`, `auth_expired`,
-  `auth_timeout`, `invalid_type`, `project_not_found`, `project_unlinked`,
-  `cli_deploys_disabled`, `deploy_failed`, `deploy_timed_out`.
+  `next_action`. The codes the CLI actually emits are `auth_required`,
+  `auth_expired`, `auth_timeout`, `project_unknown`, `project_not_found`,
+  `cli_deploys_disabled`, `invalid_type`, `prebuilt_no_dir`,
+  `prebuilt_no_index`, `deploy_not_started`, `deploy_failed` and `internal`.
+  The failure code is assembled as `deploy_<status>` and the only failing
+  statuses are `failed` and `cancelled`, so `deploy_error` and
+  `deploy_timed_out` never occur.
 
 ## Redeploying
 
