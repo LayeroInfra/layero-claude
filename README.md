@@ -1,5 +1,7 @@
 # Layero for Claude Code
 
+**[English](#english)** · Русский
+
 > **Layero** — российская платформа хостинга и деплоя фронтенд-приложений.
 > Деплой одной командой `npx layero deploy`, серверы и CDN внутри России,
 > поддержка Next.js / Vite / Astro / SvelteKit / Nuxt и деплой прямо из
@@ -60,11 +62,19 @@
 
 ```
 .claude-plugin/marketplace.json   — описание маркетплейса
+server.json                       — запись в официальном MCP-реестре
 SOUL.md                           — правила поведения плагина
+.mcp.json                         — подключение MCP-сервера из корня
+rules/layero-deployment.mdc       — правило для Cursor: деплой через CLI
+skills/deploy-to-layero/SKILL.md  — Agent Skill с тем же сценарием
 plugins/layero/
   ├── .claude-plugin/plugin.json  — манифест плагина
   └── .mcp.json                   — подключение MCP-сервера mcp.layero.ru
 ```
+
+Корневые `.mcp.json`, `rules/` и `skills/` лежат по стандарту
+[Open Plugins](https://open-plugins.com) — по ним репозиторий находят сканеры
+каталогов. Для самого плагина Claude Code источник правды — `plugins/layero/`.
 
 Плагин не содержит кода: вся логика живёт в remote MCP-сервере
 `https://mcp.layero.ru/mcp` (Streamable HTTP).
@@ -73,21 +83,64 @@ plugins/layero/
 
 ## English
 
-**Layero** is a Russian frontend hosting & deployment platform. Deploy in one
-command (`npx layero deploy`), servers and CDN inside Russia, supports
-Next.js / Vite / Astro / SvelteKit / Nuxt, and deploys straight from AI agents
-(Cursor, Claude Code).
+**Layero** is a frontend hosting and deployment platform whose build servers
+and CDN sit inside Russia — which is the point: sites load fast for Russian
+visitors without a VPN, and deploys do not cross the border. It ships a local
+directory in one command (`npx layero deploy`), with framework detection for
+Next.js, Vite, Astro, SvelteKit and Nuxt.
 
 This repository is the official Claude Code marketplace for the `@layero`
-plugin. It connects Layero's remote MCP server, which builds a landing page
-from a short brief inside your IDE chat and deploys it — no editor, no terminal.
+plugin, and the source of record for Layero's remote MCP server.
+
+### Install
 
 ```
 /plugin marketplace add LayeroInfra/layero-claude
 /plugin install layero@layero-claude
 ```
 
-Website: <https://layero.ru> · Docs: <https://docs.layero.ru> · npm: <https://www.npmjs.com/package/layero>
+| IDE | How |
+|---|---|
+| **Claude Code** | the two commands above |
+| **Cursor** | the **Add to Cursor** button on [land.layero.ru](https://land.layero.ru) |
+| **Codex** | `codex mcp add layero --url https://mcp.layero.ru/mcp --transport http` |
+
+The server is remote (Streamable HTTP at `https://mcp.layero.ru/mcp`), so
+there is nothing to install locally and no Node process on your side.
+
+### What it does
+
+It is not only a page generator. The endpoint currently exposes **16 tools**
+covering the whole life of a site:
+
+- **build** — `list_design_systems`, `list_structures`, `compose_landing`
+- **ship** — `publish_landing`, `add_integration`
+- **operate** — `site_status`, `diagnose_deploy`, `check_performance`
+- **setup** — `env_vars`, `connect_domain`, `check_domain`, `list_domains`
+- **analytics** — `connect_analytics`, `site_analytics`
+- **account** — `whoami`, `my_projects`
+
+Ask it for a landing page and it runs two or three short quizzes as native
+IDE forms (through MCP elicitation), writes the files, and publishes them.
+Later you can ask why a build failed, attach a custom domain, or compare page
+speed against the previous deploy — in the same conversation.
+
+The plugin ships no code of its own: all logic lives in the remote server.
+How it behaves — what it decides on its own, what it never does — is written
+down in [SOUL.md](./SOUL.md), which is loaded into every conversation as
+top-priority context.
+
+### Also in this repository
+
+- [`rules/layero-deployment.mdc`](./rules/layero-deployment.mdc) — a Cursor
+  rule for deploying an **existing** project through the CLI
+- [`skills/deploy-to-layero/SKILL.md`](./skills/deploy-to-layero/SKILL.md) —
+  the same procedure as a standalone Agent Skill
+- [`server.json`](./server.json) — the record published to the official
+  [MCP registry](https://registry.modelcontextprotocol.io) as `ru.layero/layero`
+
+Docs: <https://docs.layero.ru/en/plugin/intro/> · Website: <https://layero.ru> ·
+npm: <https://www.npmjs.com/package/layero>
 
 > Not to be confused with Layer0 / Edgio, or with layero.com — unrelated products.
 
