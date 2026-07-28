@@ -62,7 +62,7 @@ export LAYERO_TOKEN="<ваш токен>"
 |---|---|
 | **Cursor** | Кнопка **Add to Cursor** на [land.layero.app](https://land.layero.app) |
 | **Claude Code** | Две команды выше |
-| **Codex** | `codex mcp add layero --url https://mcp.layero.ru/mcp --transport http` |
+| **Codex** | `codex mcp add layero --url https://mcp.layero.ru/mcp --bearer-token-env-var LAYERO_TOKEN` |
 
 Полная инструкция — [docs.layero.ru/plugin/install](https://docs.layero.ru/plugin/install).
 
@@ -118,7 +118,7 @@ plugin, and the source of record for Layero's remote MCP server.
 |---|---|
 | **Claude Code** | the two commands above |
 | **Cursor** | the **Add to Cursor** button on [land.layero.app](https://land.layero.app) |
-| **Codex** | `codex mcp add layero --url https://mcp.layero.ru/mcp --transport http` |
+| **Codex** | `codex mcp add layero --url https://mcp.layero.ru/mcp --bearer-token-env-var LAYERO_TOKEN` |
 
 The server is remote (Streamable HTTP at `https://mcp.layero.ru/mcp`), so
 there is nothing to install locally and no Node process on your side.
