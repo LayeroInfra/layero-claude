@@ -20,6 +20,21 @@
 
 После установки в чате доступен `@layero`.
 
+### Подключение аккаунта
+
+Собрать лендинг можно сразу — подбор структуры и дизайн-системы работает без
+авторизации. Публикация требует токен: выпустите его на
+[app.layero.ru/settings/cli](https://app.layero.ru/settings/cli) и положите в
+переменную окружения — плагин подставит её в заголовок сам.
+
+```bash
+export LAYERO_TOKEN="<ваш токен>"
+```
+
+Переменную удобно держать в профиле оболочки (`~/.zshrc`, `~/.bashrc`), чтобы
+она была и в следующих сессиях. Если её не задать, публикация ответит, что
+токен не принят, и укажет ту же страницу.
+
 ## Что делает `@layero`
 
 Плагин подключает [MCP](https://modelcontextprotocol.io/)-сервер Layero и позволяет
@@ -107,6 +122,21 @@ plugin, and the source of record for Layero's remote MCP server.
 
 The server is remote (Streamable HTTP at `https://mcp.layero.ru/mcp`), so
 there is nothing to install locally and no Node process on your side.
+
+### Connecting your account
+
+Building a landing page works right away — picking a structure and a design
+system needs no authentication. Publishing needs a token: issue one at
+[app.layero.ru/settings/cli](https://app.layero.ru/settings/cli) and put it in
+an environment variable; the plugin substitutes it into the header itself.
+
+```bash
+export LAYERO_TOKEN="<your token>"
+```
+
+Keep it in your shell profile (`~/.zshrc`, `~/.bashrc`) so later sessions pick
+it up. Without it, publishing replies that the token was not accepted and
+points at the same page.
 
 ### What it does
 

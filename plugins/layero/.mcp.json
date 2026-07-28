@@ -2,7 +2,10 @@
   "mcpServers": {
     "layero": {
       "type": "http",
-      "url": "https://mcp.layero.ru/mcp"
+      "url": "https://mcp.layero.ru/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LAYERO_TOKEN}"
+      }
     }
   }
 }
