@@ -123,6 +123,10 @@ plugin, and the source of record for Layero's remote MCP server.
 The server is remote (Streamable HTTP at `https://mcp.layero.ru/mcp`), so
 there is nothing to install locally and no Node process on your side.
 
+It is also listed in the [official MCP registry](https://registry.modelcontextprotocol.io)
+as `ru.layero/layero` and on [Smithery](https://smithery.ai/servers/borisowvalia/layero),
+if your client installs servers from a catalogue.
+
 ### Connecting your account
 
 Building a landing page works right away — picking a structure and a design
