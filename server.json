@@ -2,17 +2,26 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ru.layero/layero",
   "title": "Layero",
-  "description": "Build, publish and operate frontend sites from IDE chat — build servers and CDN inside Russia.",
+  "description": "Build a landing page from your IDE chat, publish it, then manage domains and analytics.",
   "websiteUrl": "https://docs.layero.ru/en/plugin/intro/",
   "repository": {
     "url": "https://github.com/LayeroInfra/layero-claude",
     "source": "github"
   },
-  "version": "1.28.1",
+  "version": "1.29.0",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.layero.ru/mcp"
+      "url": "https://mcp.layero.ru/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Layero token, issued at https://app.layero.ru/settings/cli. Optional: building a landing works anonymously; publishing, domains and analytics need it.",
+          "isRequired": false,
+          "isSecret": true,
+          "placeholder": "Bearer layero_ci_..."
+        }
+      ]
     }
   ]
 }
