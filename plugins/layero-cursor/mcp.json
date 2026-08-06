@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "layero": {
+      "type": "http",
+      "url": "https://mcp.layero.ru/mcp",
+      "_meta": {
+        "ideToolIconPath": "./assets/logo.svg",
+        "ideToolTitles": {
+          "add_integration": "Add Integration",
+          "cancel_deploy": "Cancel Deploy",
+          "check_copy": "Check Copy",
+          "check_domain": "Check Domain",
+          "check_performance": "Check Performance",
+          "compose_landing": "Compose Landing",
+          "compose_landing_submit": "Submit Landing Brief",
+          "connect_analytics": "Connect Analytics",
+          "connect_domain": "Connect Domain",
+          "deploy_logs": "Deploy Logs",
+          "diagnose_deploy": "Diagnose Deploy",
+          "env_vars": "Environment Variables",
+          "list_deploys": "List Deploys",
+          "list_design_systems": "List Design Systems",
+          "list_domains": "List Domains",
+          "list_structures": "List Structures",
+          "my_projects": "My Projects",
+          "publish_landing": "Publish Landing",
+          "read_site": "Read Site",
+          "refactor_site": "Refactor Site",
+          "retry_deploy": "Retry Deploy",
+          "rollback": "Rollback",
+          "site_analytics": "Site Analytics",
+          "site_issues": "Site Issues",
+          "site_screenshot": "Site Screenshot",
+          "site_status": "Site Status",
+          "whoami": "Who Am I"
+        }
+      }
+    }
+  }
+}

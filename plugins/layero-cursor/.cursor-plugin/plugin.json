@@ -1,0 +1,24 @@
+{
+  "name": "layero",
+  "displayName": "Layero",
+  "version": "1.0.0",
+  "description": "Build a landing page in chat and deploy it to Layero — hosting with build servers and CDN inside Russia.",
+  "author": {
+    "name": "Layero",
+    "url": "https://layero.ru"
+  },
+  "homepage": "https://docs.layero.ru/plugin/intro",
+  "repository": "https://github.com/LayeroInfra/layero-claude",
+  "license": "MIT",
+  "keywords": [
+    "deploy",
+    "deployment",
+    "hosting",
+    "cdn",
+    "landing-page",
+    "static-site",
+    "russia",
+    "mcp"
+  ],
+  "logo": "assets/logo.svg"
+}
